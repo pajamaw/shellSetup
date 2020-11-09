@@ -3,8 +3,8 @@
 #
 # Authors:
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
-#
 
+#
 #
 # Browser
 #
@@ -17,8 +17,8 @@ fi
 # Editors
 #
 
-export EDITOR='nano'
-export VISUAL='nano'
+export EDITOR='vim'
+export VISUAL='vim'
 export PAGER='less'
 
 #
@@ -36,21 +36,6 @@ fi
 # Ensure path arrays do not contain duplicates.
 typeset -gU cdpath fpath mailpath path
 
-# Set the list of directories that cd searches.
-# cdpath=(
-#   $cdpath
-# )
-
-# Set the list of directories that Zsh searches for programs.
-path=(
-  /usr/local/{bin,sbin}
-  $path
-)
-
-#
-# Less
-#
-
 # Set the default Less options.
 # Mouse-wheel scrolling has been disabled by -X (disable screen clearing).
 # Remove -X and -F (exit if the content fits on one screen) to enable it.
@@ -61,3 +46,157 @@ export LESS='-F -g -i -M -R -S -w -X -z-4'
 if (( $#commands[(i)lesspipe(|.sh)] )); then
   export LESSOPEN="| /usr/bin/env $commands[(i)lesspipe(|.sh)] %s 2>&-"
 fi
+# get usr/bin and usr/local/bin
+export PATH=/bin:/usr/bin:/usr/local/bin:${PATH}
+# go
+export PATH="$PATH:$HOME/go/bin"
+export GOPATH="/Users/pjwickwire/go"
+# rust
+export PATH="$HOME/.cargo/bin:$PATH"
+# ruby
+export PATH="$PATH:$HOME/.rvm/bin"
+# vcodse stuff
+# export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+# node stuff
+export NVM_DIR="/Users/pjwickwire/.nvm"
+
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+# make sure new terminals keep paths
+
+[[ -f /etc/profile.d/vte.sh ]] && . /etc/profile.d/vte.sh
+eval $(thefuck --alias)
+
+# fuzzy finder
+# https://github.com/junegunn/fzf#fuzzy-completion-for-bash-and-zsh
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# aliases
+
+# package manager git instead of default git
+alias git="/usr/local/bin/git"
+
+alias bv="cd /Users/pjwickwire/Development/beenverified_com"
+alias wc="cd /Users/pjwickwire/Development/bv_web_client_v2"
+alias pl="cd /Users/pjwickwire/Development/pl_web_client_v2"
+alias ng="cd /Users/pjwickwire/Development/ng_web_client"
+alias ng2="cd /Users/pjwickwire/Development/ng_web_client_v2"
+alias ktc="cd /Users/pjwickwire/Development/ktc_web_client"
+alias nw="cd /Users/pjwickwire/Development/nw_web_client_v2"
+
+alias canary="open -a Google\ Chrome\ Canary --args --disable-web-security --user-data-dir=$HOME"
+alias zombies="ps -ef | grep ember"
+
+alias gp="git push"
+alias localfuck="npm install --save-dev ember-cli-velocity@0.4.0 velocity-animate; sh/ember-serve"
+alias qc="git commit --amend --no-edit --no-verify"
+alias setdinghy="export DOCKER_HOST=tcp://192.168.99.101:2376 \
+    export DOCKER_CERT_PATH=/Users/pjwickwire/.docker/machine/machines/dinghy \
+    export DOCKER_TLS_VERIFY=1 \
+    export DOCKER_MACHINE_NAME=dinghy \
+    export COMPOSE_TLS_VERSION=TLSv1_2
+"
+
+alias dcb="docker-compose build"
+alias dca="docker attach beenverifiedcom_bvapp_1"
+alias dup="docker-compose up -d"
+
+alias docker_migrate_error="docker-compose run bvapp rake db:reset && docker-compose run bvapp rake db:migrate"
+
+alias dcm="docker-compose run bvapp rake db:migrate"
+alias dctb="docker-compose -f docker-compose-test.yaml build"
+alias dctm="docker-compose -f docker-compose-test.yaml run bvapp_rspec rake db:migrate"
+alias tc="docker-compose -f docker-compose-test.yaml run bvapp_rspec rspec"
+alias redoshit="rm -rf node_modules/ && \
+    rm -rf package-lock.json && \
+    npm cache clean --force && \
+    rm -rf tmp/ && \
+    rm -rf dist/ && \
+    npm install
+"
+# https://www.tecmint.com/find-top-large-directories-and-files-sizes-in-linux/
+alias find-fatties="du -hs * | sort -rh | head -10"
+alias find-fattest"du -hs * | sort -rh | head"
+# cool script to use fzf to checkout shit
+# https://github.com/pawelduda/fzf-live-repl
+alias rubprev="echo '' | fzf --print-query --preview 'ruby -e {q}'"
+
+# check whether out
+alias nyw="curl wttr.in/NewYork"
+
+# f'n flux doesn't always quit - but when you force it to quit 
+# it doesn't reset the screen
+alias flux='open /Applications/Flux.app'
+
+alias grabf="ps aux | grep [F]lux"
+
+# the -10 tag BUS kills things safely
+# but then sometimes it doesn
+ks() {
+  kill -10 $(ps aux | grep [F]lux | awk '{print $2}')
+}
+
+# pidof isn't built in
+pid() {
+  ps aux | grep ${1}
+}
+
+alias ali="code ~/.zprofile"
+
+nali() {
+  echo "Updating shell profile..."
+  source ~/.zprofile
+}
+
+pali() {
+  echo "Saving shell profile to github..."
+  yes | cp -r ~/.zprofile ~/shellSetup/
+  yes | cp -r ~/.zprezto ~/shellSetup/
+  yes | cp -r ~/.zpreztorc ~/shellSetup/
+  yes | cp -r ~/.zlogin ~/shellSetup/
+  yes | cp -r ~/.zlogout ~/shellSetup/
+  yes | cp -r ~/.zshenv ~/shellSetup/
+  yes | cp -r ~/.zshrc ~/shellSetup/
+
+  cd ~/shellSetup
+  git add .
+  git commit -m "Updated Shell scripts"
+  git push
+  cd ..
+}
+
+weather() {
+  curl wttr.in/${1}
+}
+
+checkFlux() {
+  i="10"
+  while [ $i -lt 15 ]
+  do
+    flux
+    sleep 2
+    `kill -${i} $(ps aux | grep '[F]lux' | awk '{print $2}')`
+    echo `${i} flag just ran run`
+    sleep 1
+    i=$[$i+1]
+  done
+}
+
+gitnew() {
+  echo "WIP: going to need to setup a new personal access token like they talk about here \n
+  https://developer.github.com/v3/auth/#working-with-two-factor-authentication
+  "
+  # CURRENTDIR=${PWD##*/}
+  # GITHUBUSER=$(git config user.name)
+
+  # read "REPONAME?New repo name (enter for ${PWD##*/}):"
+  # read "USER?Git Username (enter for ${GITHUBUSER}):"
+  # read "DESCRIPTION?Repo Description:"
+
+  # echo "Creating new repo..."
+  # git init
+
+  # curl -sL -u ${USER:-${GITHUBUSER}} https://api.github.com/user/repos --header '-d "{\"name\": \"${REPONAME:-${CURRENTDIR}}\", \"description\": \"${DESCRIPTION}\", \"private\": false, \"has_issues\": true, \"has_downloads\": true, \"has_wiki\": false}"
+
+  # git remote set-url origin git@github.com:${USER:-${GITHUBUSER}}/${REPONAME:-${CURRENTDIR}}.git
+  # git push --set-upstream origin master
+}

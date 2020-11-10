@@ -45,8 +45,7 @@ export PATH="$PATH:$HOME/.cargo/bin"
 export rvm_path="$HOME/.rvm"
 
 export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
-# vcodse stuff
-# export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+
 # node stuff
 export NVM_DIR="$HOME/.nvm"
 # bahh dont wanna search for my other version of ndoe that's in my brew

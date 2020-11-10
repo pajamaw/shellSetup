@@ -42,6 +42,10 @@ brew "diskonaut"
 brew "docker-machine"
 # Emulates the detach feature of screen
 brew "dtach"
+# Generic library support script
+brew "libtool"
+# Manage compile and link flags for libraries
+brew "pkg-config"
 # GNU Transport Layer Security (TLS) Library
 brew "gnutls"
 # OpenType text shaping engine
@@ -68,10 +72,10 @@ brew "highlight"
 brew "hugo"
 # Database of common MIME types
 brew "shared-mime-info"
-# Generic library support script
-brew "libtool"
 # Tools and libraries to manipulate images in many formats
-brew "imagemagick"
+brew "imagemagick", link: false
+# Tools and libraries to manipulate images in many formats
+brew "imagemagick@6"
 # DevTools proxy for iOS devices
 brew "ios-webkit-debug-proxy"
 # CLI wrapper for basic network utilities on macOS - ip command
@@ -82,12 +86,12 @@ brew "jq"
 brew "kubernetes-cli", link: false
 # Multi-format archive and compression library
 brew "libarchive"
-# GNOME XML library
-brew "libxml2"
 # Conversion library
 brew "libiconv"
 # X.509 and CMS library
 brew "libksba"
+# GNOME XML library
+brew "libxml2"
 # C XSLT library for GNOME
 brew "libxslt"
 # YAML Parser
@@ -116,16 +120,16 @@ brew "nmap"
 brew "p7zip"
 # Swiss-army knife of markup format conversion
 brew "pandoc"
-# Manage compile and link flags for libraries
-brew "pkg-config"
 # Cross-platform application and UI framework
 brew "qt"
 # PDF rendering library (based on the xpdf-3.0 code base)
-brew "poppler"
+brew "poppler", link: false
 # Object-relational database system
 brew "postgresql"
 # Software environment for statistical computing
 brew "r"
+# Ruby version manager
+brew "rbenv"
 # Persistent key-value database, with built-in net interface
 brew "redis"
 # Safe, concurrent, practical language
@@ -177,6 +181,4 @@ cask "db-browser-for-sqlite"
 cask "joplin"
 cask "lulu"
 cask "mactex"
-cask "minikube"
 cask "ngrok"
-cask "wireshark"

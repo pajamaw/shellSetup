@@ -67,14 +67,21 @@ eval $(thefuck --alias)
 alias git="/usr/local/bin/git"
 
 # BV specific 
-alias bv="cd $HOME/Development/bv/beenverified_com"
-alias webc="cd $HOME/Development/bv/bv_web_client_v2"
-alias pl="cd $HOME/Development/bv/pl_web_client_v2"
-alias ng="cd $HOME/Development/bv/ng_web_client"
-alias ng2="cd $HOME/Development/bv/ng_web_client_v2"
-alias ktc="cd $HOME/Development/bv/ktc_web_client"
-alias nw="cd $HOME/Development/bv/nw_web_client_v2"
-alias fhub="cd ~/Development/bv/freshness-hub"
+# alias bv="cd $HOME/Development/bv/beenverified_com"
+# alias webc="cd $HOME/Development/bv/bv_web_client_v2"
+# alias pl="cd $HOME/Development/bv/pl_web_client_v2"
+# alias ng="cd $HOME/Development/bv/ng_web_client"
+# alias ng2="cd $HOME/Development/bv/ng_web_client_v2"
+# alias ktc="cd $HOME/Development/bv/ktc_web_client"
+# alias nw="cd $HOME/Development/bv/nw_web_client_v2"
+# alias fhub="cd ~/Development/bv/freshness-hub"
+
+# CareOf specific 
+alias careof="cd $HOME/Development/careof"
+alias cweb="cd $HOME/Development/careof/web"
+alias cnweb="cd $HOME/Development/careof/next-web"
+alias wms="cd $HOME/Development/careof/wms"
+alias cmobile="cd $HOME/Development/careof/mobile"
 
 alias list="ruby ~/Development/projects/async_slack_standup.rb"
 

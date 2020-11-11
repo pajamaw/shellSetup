@@ -1,3 +1,7 @@
+#### NOTE: 
+This is a rename of the prezto directory
+
+
 Prezto — Instantly Awesome Zsh
 ==============================
 

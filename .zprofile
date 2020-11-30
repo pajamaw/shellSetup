@@ -245,8 +245,6 @@ _brew() {
   fi
 }
 
-set -euo pipefail
-
 find_pids() {
     pgrep -f "${1}" || true
 }
@@ -265,6 +263,7 @@ kill_pids() {
 }
 
 fuck_ruby() {
+  set -euo pipefail
   mapfile -t pids < <(
       find_pids rspec
       find_pids spring

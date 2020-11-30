@@ -262,11 +262,11 @@ kill_pids() {
   fi
 }
 
-fuck_ruby() {
-  mapfile -t pids <(
-      find_pids rspec
-      find_pids spring
-      find_ports 3000
-  )
+kill_ruby() {
+  # mapfile -t pids <(
+  #     find_pids rspec
+  #     find_pids spring
+  #     find_ports 3000
+  # )
   kill_pids "${pids[@]}"
 }

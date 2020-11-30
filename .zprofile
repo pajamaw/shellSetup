@@ -254,17 +254,16 @@ find_ports() {
 }
 
 kill_pids() {
-    if [ ${@+x} ]; then
-        ps "${@}"
-        [ -z ${DEBUG+x} ] && (kill -9 "${@}")
-    else
-        echo "No matching PIDs found"
-    fi
+  if [ ${@+x} ]; then
+      ps "${@}"
+      [ -z ${DEBUG+x} ] && (kill -9 "${@}")
+  else
+      echo "No matching PIDs found"
+  fi
 }
 
 fuck_ruby() {
-  set -euo pipefail
-  mapfile -t pids < <(
+  mapfile -t pids <(
       find_pids rspec
       find_pids spring
       find_ports 3000

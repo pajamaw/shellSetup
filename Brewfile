@@ -3,6 +3,7 @@ tap "eddieantonio/eddieantonio"
 tap "heroku/brew"
 tap "homebrew/bundle"
 tap "homebrew/cask"
+tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "homebrew/services"
 tap "wtfutil/wtfutil"
@@ -26,8 +27,12 @@ brew "broot"
 brew "openssl@1.1"
 # Library for command-line editing
 brew "readline"
+# Enables you to reproduce the CircleCI environment locally
+brew "circleci"
 # Dynamic, general-purpose programming language
 brew "clojure"
+# Dependency manager for Cocoa projects
+brew "cocoapods"
 # Dependency Manager for PHP
 brew "composer"
 # GNU File, Shell, and Text utilities
@@ -66,6 +71,8 @@ brew "git"
 brew "googler"
 # Fulltext search engine and column store
 brew "groonga"
+# HTTP load generator, ApacheBench (ab) replacement
+brew "hey"
 # Convert source code to formatted text with syntax highlighting
 brew "highlight"
 # Configurable static site generator
@@ -75,7 +82,7 @@ brew "shared-mime-info"
 # Tools and libraries to manipulate images in many formats
 brew "imagemagick", link: false
 # Tools and libraries to manipulate images in many formats
-brew "imagemagick@6"
+brew "imagemagick@6", link: true
 # DevTools proxy for iOS devices
 brew "ios-webkit-debug-proxy"
 # CLI wrapper for basic network utilities on macOS - ip command
@@ -101,13 +108,13 @@ brew "magic-wormhole"
 # Drop-in replacement for MySQL
 brew "mariadb", link: false
 # High performance, distributed memory object caching system
-brew "memcached"
+brew "memcached", restart_service: true
 # Run a Kubernetes cluster locally
 brew "minikube"
 # Intercept, modify, replay, save HTTP/S traffic
 brew "mitmproxy"
 # Open source relational database management system
-brew "mysql", restart_service: true
+brew "mysql"
 # Interactive cheatsheet tool for the command-line
 brew "navi"
 # Utility for managing network connections
@@ -125,13 +132,13 @@ brew "qt"
 # PDF rendering library (based on the xpdf-3.0 code base)
 brew "poppler", link: false
 # Object-relational database system
-brew "postgresql"
+brew "postgresql", restart_service: true
 # Software environment for statistical computing
 brew "r"
 # Ruby version manager
 brew "rbenv"
 # Persistent key-value database, with built-in net interface
-brew "redis"
+brew "redis", restart_service: true
 # Safe, concurrent, practical language
 brew "rust"
 # Rust toolchain installer
@@ -177,6 +184,7 @@ brew "eddieantonio/eddieantonio/imgcat"
 # Everything you need to get started with Heroku
 brew "heroku/brew/heroku"
 cask "adoptopenjdk"
+cask "chromedriver"
 cask "db-browser-for-sqlite"
 cask "joplin"
 cask "lulu"

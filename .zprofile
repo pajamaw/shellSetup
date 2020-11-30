@@ -85,6 +85,11 @@ alias cmobile="cd $HOME/Development/careof/mobile"
 
 alias list="ruby ~/Development/projects/async_slack_standup.rb"
 
+# make sure to download `ttab` to npm -- nice shortcut pkg for opening new tabs
+start_web() {
+  ttab "cweb && rails s" && ttab "cweb && bundle exec sidekiq -C config/sidekiq_staging.yml"
+}
+
 # Applications
 
 alias canary="open -a Google\ Chrome\ Canary --args --disable-web-security --user-data-dir=$HOME"
@@ -142,7 +147,7 @@ ks() {
 }
 
 # pidof isn't built in
-pid() {
+_pidof() {
   ps aux | grep ${1}
 }
 
@@ -240,3 +245,30 @@ _brew() {
   fi
 }
 
+set -euo pipefail
+
+find_pids() {
+    pgrep -f "${1}" || true
+}
+
+find_ports() {
+    (ss -lptnOH "sport = :${1}" | grep -oP "\w+=\d+" | awk -F= '/pid/ {print $NF}' | sort -nu) || true
+}
+
+kill_pids() {
+    if [ ${@+x} ]; then
+        ps "${@}"
+        [ -z ${DEBUG+x} ] && (kill -9 "${@}")
+    else
+        echo "No matching PIDs found"
+    fi
+}
+
+fuck_ruby() {
+  mapfile -t pids < <(
+      find_pids rspec
+      find_pids spring
+      find_ports 3000
+  )
+  kill_pids "${pids[@]}"
+}

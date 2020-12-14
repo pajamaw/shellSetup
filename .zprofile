@@ -134,13 +134,14 @@ alias flux='open /Applications/Flux.app'
 
 alias grabf="ps aux | grep [F]lux"
 
-# the -10 tag BUS kills things safely
-# but then sometimes it doesn
-
 # moving to methods
 countfiles(){
   ls -lq . | wc -l
 }
+
+# Specifically for flux but 
+# the -10 tag BUS kills things safely
+# but then sometimes it doesn
 
 ks() {
   kill -10 $(ps aux | grep [F]lux | awk '{print $2}')
@@ -246,7 +247,7 @@ _brew() {
 }
 
 find_pids() {
-    pgrep -f "${1}" || true
+  pgrep "${1}" || true
 }
 
 find_ports() {
@@ -262,11 +263,16 @@ kill_pids() {
   fi
 }
 
-kill_ruby() {
-  # mapfile -t pids <(
-  #     find_pids rspec
-  #     find_pids spring
-  #     find_ports 3000
-  # )
+fuckruby() {
+  pids=(
+      find_pids rspec
+      find_pids spring
+      find_ports 3000
+  )
   kill_pids "${pids[@]}"
+  echo "ruby fucked"
+}
+
+web-lint() {
+  reek && rubocop
 }

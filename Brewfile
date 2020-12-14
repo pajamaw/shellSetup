@@ -55,6 +55,8 @@ brew "pkg-config"
 brew "gnutls"
 # OpenType text shaping engine
 brew "harfbuzz"
+# OCR (Optical Character Recognition) engine
+brew "tesseract"
 # Play, record, convert, and stream audio and video
 brew "ffmpeg"
 # Command-line fuzzy finder written in Go
@@ -139,6 +141,8 @@ brew "r"
 brew "rbenv"
 # Persistent key-value database, with built-in net interface
 brew "redis", restart_service: true
+# Search tool like grep and The Silver Searcher
+brew "ripgrep"
 # Safe, concurrent, practical language
 brew "rust"
 # Rust toolchain installer

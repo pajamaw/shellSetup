@@ -66,16 +66,6 @@ eval $(thefuck --alias)
 # package manager git instead of default git
 alias git="/usr/local/bin/git"
 
-# BV specific 
-# alias bv="cd $HOME/Development/bv/beenverified_com"
-# alias webc="cd $HOME/Development/bv/bv_web_client_v2"
-# alias pl="cd $HOME/Development/bv/pl_web_client_v2"
-# alias ng="cd $HOME/Development/bv/ng_web_client"
-# alias ng2="cd $HOME/Development/bv/ng_web_client_v2"
-# alias ktc="cd $HOME/Development/bv/ktc_web_client"
-# alias nw="cd $HOME/Development/bv/nw_web_client_v2"
-# alias fhub="cd ~/Development/bv/freshness-hub"
-
 # CareOf specific 
 alias careof="cd $HOME/Development/careof"
 alias cweb="cd $HOME/Development/careof/web"
@@ -103,15 +93,14 @@ alias ga="git add"
 alias gs="git status"
 alias gc="git checkout"
 
+# dokcer
 alias dcb="docker-compose build"
 alias dca="docker attach beenverified_com_bvapp_1"
 alias dup="docker-compose up -d"
-alias docker_migrate_error="docker-compose run bvapp rake db:reset && docker-compose run bvapp rake db:migrate"
-alias dcm="docker-compose run bvapp rake db:migrate"
-alias dctb="docker-compose -f docker-compose-test.yaml build"
-alias dctm="docker-compose -f docker-compose-test.yaml run bvapp_rspec rake db:migrate"
-alias tc="docker-compose -f docker-compose-test.yaml run bvapp_rspec rspec"
-alias run_parallel="bin/dc_build && bin/db_migrate && bin/dc_rspec_parallel"
+
+# rails
+alias be="bundle exec" 
+
 # package.json dependenceiese
 alias redoshit="rm -rf node_modules/ && \
     rm -rf package-lock.json && \

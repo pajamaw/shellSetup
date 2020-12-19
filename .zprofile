@@ -265,3 +265,7 @@ fuckruby() {
 web-lint() {
   reek && rubocop
 }
+
+nocache() {
+  sudo killall -HUP mDNSResponder
+}

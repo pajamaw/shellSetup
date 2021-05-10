@@ -55,7 +55,7 @@ export NVM_DIR="$HOME/.nvm"
 [[ -f /etc/profile.d/vte.sh ]] && . /etc/profile.d/vte.sh
 eval $(thefuck --alias)
 
-export PATH="./.bin:$PATH"
+export PATH="$PATH:./.bin"
 # fuzzy finder
 # cool script to use fzf to checkout shit
 # https://github.com/pawelduda/fzf-live-repl

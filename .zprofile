@@ -36,7 +36,7 @@ fi
 # get usr/bin and usr/local/bin
 # make usr/local/bin go first so that packages i add are used before 
 # those from mac 
-export PATH=/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:${PATH}
+export PATH="/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:$PATH"
 # go
 export GOPATH="$HOME/go"
 # rust
@@ -55,6 +55,8 @@ export NVM_DIR="$HOME/.nvm"
 [[ -f /etc/profile.d/vte.sh ]] && . /etc/profile.d/vte.sh
 eval $(thefuck --alias)
 
+alias bi="bundle install --binstubs=.bin"
+export PATH="./.bin:$PATH"
 # fuzzy finder
 # cool script to use fzf to checkout shit
 # https://github.com/pawelduda/fzf-live-repl

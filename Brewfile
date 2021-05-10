@@ -7,6 +7,8 @@ tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "homebrew/services"
 tap "wtfutil/wtfutil"
+# Run your GitHub Actions locally 🚀
+brew "act"
 # Automatic configure script builder
 brew "autoconf"
 # Tool for generating GNU Standards-compliant Makefiles
@@ -27,6 +29,16 @@ brew "broot"
 brew "openssl@1.1"
 # Library for command-line editing
 brew "readline"
+# Core application library for C
+brew "glib"
+# Generic library support script
+brew "libtool"
+# Manage compile and link flags for libraries
+brew "pkg-config"
+# GNU Transport Layer Security (TLS) Library
+brew "gnutls"
+# Emacs dependency management
+brew "cask"
 # Enables you to reproduce the CircleCI environment locally
 brew "circleci"
 # Dynamic, general-purpose programming language
@@ -47,12 +59,6 @@ brew "diskonaut"
 brew "docker-machine"
 # Emulates the detach feature of screen
 brew "dtach"
-# Generic library support script
-brew "libtool"
-# Manage compile and link flags for libraries
-brew "pkg-config"
-# GNU Transport Layer Security (TLS) Library
-brew "gnutls"
 # OpenType text shaping engine
 brew "harfbuzz"
 # OCR (Optical Character Recognition) engine
@@ -82,15 +88,17 @@ brew "hugo"
 # Database of common MIME types
 brew "shared-mime-info"
 # Tools and libraries to manipulate images in many formats
-brew "imagemagick", link: false
+brew "imagemagick"
 # Tools and libraries to manipulate images in many formats
-brew "imagemagick@6", link: true
+brew "imagemagick@6"
 # DevTools proxy for iOS devices
 brew "ios-webkit-debug-proxy"
 # CLI wrapper for basic network utilities on macOS - ip command
 brew "iproute2mac"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
+# Network authentication protocol
+brew "krb5"
 # Kubernetes command-line interface
 brew "kubernetes-cli", link: false
 # Multi-format archive and compression library
@@ -125,14 +133,16 @@ brew "netcat"
 brew "nginx"
 # Port scanning utility for large networks
 brew "nmap"
+# Optimized BLAS library
+brew "openblas"
 # 7-Zip (high compression file archiver) implementation
 brew "p7zip"
 # Swiss-army knife of markup format conversion
 brew "pandoc"
 # Cross-platform application and UI framework
-brew "qt"
+brew "qt", link: false
 # PDF rendering library (based on the xpdf-3.0 code base)
-brew "poppler", link: false
+brew "poppler"
 # Object-relational database system
 brew "postgresql", restart_service: true
 # Software environment for statistical computing
@@ -155,7 +165,7 @@ brew "sphinx-doc"
 brew "stunnel"
 # Code-search similar to ack
 brew "the_silver_searcher"
-# Programatically correct mistyped console commands
+# Programmatically correct mistyped console commands
 brew "thefuck"
 # Simplified and community-driven man pages
 brew "tldr"
@@ -188,9 +198,20 @@ brew "eddieantonio/eddieantonio/imgcat"
 # Everything you need to get started with Heroku
 brew "heroku/brew/heroku"
 cask "adoptopenjdk"
+# Automated testing of webapps for Google Chrome
 cask "chromedriver"
+# Browser for SQLite databases
 cask "db-browser-for-sqlite"
+# Voice and text chat software
+cask "discord"
+# App to build and share containerized applications and microservices
+cask "docker"
+# Note taking and to-do application with synchronization capabilities
 cask "joplin"
+# Open-source firewall to block unknown outgoing connections
 cask "lulu"
+cask "lyx"
+# Full TeX Live distribution with GUI applications
 cask "mactex"
+# Reverse proxy, secure introspectable tunnels to localhost
 cask "ngrok"

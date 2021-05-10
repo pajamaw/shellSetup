@@ -55,7 +55,6 @@ export NVM_DIR="$HOME/.nvm"
 [[ -f /etc/profile.d/vte.sh ]] && . /etc/profile.d/vte.sh
 eval $(thefuck --alias)
 
-alias bi="bundle install --binstubs=.bin"
 export PATH="./.bin:$PATH"
 # fuzzy finder
 # cool script to use fzf to checkout shit
@@ -102,6 +101,7 @@ alias dup="docker-compose up -d"
 
 # rails
 alias be="bundle exec" 
+alias bi="bundle install --binstubs=.bin"
 
 # package.json dependenceiese
 alias redoshit="rm -rf node_modules/ && \

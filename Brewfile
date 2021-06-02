@@ -25,16 +25,14 @@ brew "bc"
 brew "brightness"
 # New way to see and navigate directory trees
 brew "broot"
-# Cryptography and SSL/TLS Toolkit
-brew "openssl@1.1"
 # Library for command-line editing
 brew "readline"
 # Core application library for C
 brew "glib"
-# Generic library support script
-brew "libtool"
 # Manage compile and link flags for libraries
 brew "pkg-config"
+# Generic library support script
+brew "libtool"
 # GNU Transport Layer Security (TLS) Library
 brew "gnutls"
 # Emacs dependency management
@@ -55,6 +53,8 @@ brew "curl", args: ["HEAD"]
 brew "direnv"
 # Terminal visual disk space navigator
 brew "diskonaut"
+# Lightweight DNS forwarder and DHCP server
+brew "dnsmasq"
 # Create Docker hosts locally and on cloud providers
 brew "docker-machine"
 # Emulates the detach feature of screen
@@ -87,6 +87,8 @@ brew "highlight"
 brew "hugo"
 # Database of common MIME types
 brew "shared-mime-info"
+# ISO/IEC 23008-12:2017 HEIF file format decoder and encoder
+brew "libheif"
 # Tools and libraries to manipulate images in many formats
 brew "imagemagick"
 # Tools and libraries to manipulate images in many formats
@@ -97,6 +99,10 @@ brew "ios-webkit-debug-proxy"
 brew "iproute2mac"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
+# Swiss-army knife of markup format conversion
+brew "pandoc"
+# Interactive environments for writing and running code
+brew "jupyterlab"
 # Network authentication protocol
 brew "krb5"
 # Kubernetes command-line interface
@@ -124,7 +130,7 @@ brew "minikube"
 # Intercept, modify, replay, save HTTP/S traffic
 brew "mitmproxy"
 # Open source relational database management system
-brew "mysql"
+brew "mysql", link: false
 # Interactive cheatsheet tool for the command-line
 brew "navi"
 # Utility for managing network connections
@@ -137,8 +143,6 @@ brew "nmap"
 brew "openblas"
 # 7-Zip (high compression file archiver) implementation
 brew "p7zip"
-# Swiss-army knife of markup format conversion
-brew "pandoc"
 # Cross-platform application and UI framework
 brew "qt", link: false
 # PDF rendering library (based on the xpdf-3.0 code base)
@@ -197,6 +201,7 @@ brew "codekitchen/dinghy/dinghy"
 brew "eddieantonio/eddieantonio/imgcat"
 # Everything you need to get started with Heroku
 brew "heroku/brew/heroku"
+# JDK from the Java User Group (JUG)
 cask "adoptopenjdk"
 # Automated testing of webapps for Google Chrome
 cask "chromedriver"

@@ -14,3 +14,5 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 export FONTAWESOME_NPM_AUTH_TOKEN="506C6E43-F020-4DE6-A2E5-DD47C5395967"
+
+eval "$(rbenv init -)"

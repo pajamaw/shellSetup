@@ -42,7 +42,12 @@ export GOPATH="$HOME/go"
 # rust
 export PATH="$PATH:$HOME/.cargo/bin"
 # ruby
-export rvm_path="$HOME/.rvm"
+#rbenv
+export PATH="$HOME/.rbenv/bin:$PATH"
+# to hide the stupid bin files
+export PATH="$PATH:./.bin"
+#rvm
+# export rvm_path="$HOME/.rvm"
 
 export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
 
@@ -55,7 +60,6 @@ export NVM_DIR="$HOME/.nvm"
 [[ -f /etc/profile.d/vte.sh ]] && . /etc/profile.d/vte.sh
 eval $(thefuck --alias)
 
-export PATH="$PATH:./.bin"
 # fuzzy finder
 # cool script to use fzf to checkout shit
 # https://github.com/pawelduda/fzf-live-repl
@@ -73,6 +77,7 @@ alias cweb="cd $HOME/Development/careof/web"
 alias cnweb="cd $HOME/Development/careof/next-web"
 alias wms="cd $HOME/Development/careof/wms"
 alias cmobile="cd $HOME/Development/careof/mobile"
+alias her_staging="heroku run bash -a co-sp-stage-web"
 
 alias list="ruby ~/Development/projects/async_slack_standup.rb"
 

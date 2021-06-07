@@ -35,6 +35,8 @@ fi
 
 # get usr/bin and usr/local/bin
 # make usr/local/bin go first so that packages i add are used before 
+# ensure /usr/bin doesn't precede rbenv 
+export PATH="$HOME/.rbenv/bin:$PATH"
 # those from mac 
 export PATH="/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:$PATH"
 # go
@@ -43,7 +45,6 @@ export GOPATH="$HOME/go"
 export PATH="$PATH:$HOME/.cargo/bin"
 # ruby
 #rbenv
-export PATH="$HOME/.rbenv/bin:$PATH"
 # to hide the stupid bin files
 export PATH="$PATH:./.bin"
 #rvm

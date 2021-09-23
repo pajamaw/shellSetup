@@ -9,10 +9,12 @@ source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 # broot is okay but i don't really use it
 # source /Users/pjwickwire/Library/Preferences/org.dystroy.broot/launcher/bash/br
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# removing this as i'm using asdf
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 export FONTAWESOME_NPM_AUTH_TOKEN="506C6E43-F020-4DE6-A2E5-DD47C5395967"
 
 eval "$(rbenv init -)"
+. /usr/local/opt/asdf/libexec/asdf.sh

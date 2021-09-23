@@ -56,7 +56,7 @@ export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
 export NVM_DIR="$HOME/.nvm"
 # bahh dont wanna search for my other version of ndoe that's in my brew
 
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 [[ -f /etc/profile.d/vte.sh ]] && . /etc/profile.d/vte.sh
 eval $(thefuck --alias)
@@ -276,4 +276,16 @@ web-lint() {
 
 nocache() {
   sudo killall -HUP mDNSResponder
+}
+
+rbenv_doctor() {
+  curl -fsSL https://github.com/rbenv/rbenv-installer/raw/main/bin/rbenv-doctor | bash
+}
+
+secure_rails() {
+  be rails s -b 'ssl://localhost:3000?key=/Users/pjwickwire/Development/ssl_configs/localhost.pjwickwire.key&cert=/Users/pjwickwire/Development/ssl_configs/localhost.pjwickwire.crt'
+}
+
+update_ss_key() {
+  openssl req -x509 -sha256 -nodes -newkey rsa:2048 -days 365 -keyout '/Users/pjwickwire/Development/ssl_configs/localhost.pjwickwire.key' -out '/Users/pjwickwire/Development/ssl_configs/localhost.pjwickwire.crt'
 }

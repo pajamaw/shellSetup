@@ -13,6 +13,16 @@ brew "act"
 brew "autoconf"
 # Tool for generating GNU Standards-compliant Makefiles
 brew "automake"
+# GNU File, Shell, and Text utilities
+brew "coreutils"
+# Generic library support script
+brew "libtool"
+# YAML Parser
+brew "libyaml"
+# Library for command-line editing
+brew "readline"
+# Extendable version manager with support for Ruby, Node.js, Erlang & more
+brew "asdf"
 # Terminal bandwidth utilization tool
 brew "bandwhich"
 # Bourne-Again SHell, a UNIX command interpreter
@@ -25,14 +35,12 @@ brew "bc"
 brew "brightness"
 # New way to see and navigate directory trees
 brew "broot"
-# Library for command-line editing
-brew "readline"
 # Core application library for C
 brew "glib"
 # Manage compile and link flags for libraries
 brew "pkg-config"
-# Generic library support script
-brew "libtool"
+# GNU Ubiquitous Intelligent Language for Extensions
+brew "guile"
 # GNU Transport Layer Security (TLS) Library
 brew "gnutls"
 # Emacs dependency management
@@ -45,8 +53,6 @@ brew "clojure"
 brew "cocoapods"
 # Dependency Manager for PHP
 brew "composer"
-# GNU File, Shell, and Text utilities
-brew "coreutils"
 # Get a file from an HTTP, HTTPS or FTP server
 brew "curl", args: ["HEAD"]
 # Load/unload environment variables based on $PWD
@@ -67,6 +73,8 @@ brew "tesseract"
 brew "ffmpeg"
 # Command-line fuzzy finder written in Go
 brew "fzf"
+# GNU awk utility
+brew "gawk"
 # WebDriver <-> Marionette proxy
 brew "geckodriver"
 # This library is for the GeoIP Legacy format (dat)
@@ -75,6 +83,10 @@ brew "geoip"
 brew "gh"
 # Distributed revision control system
 brew "git"
+# X.509 and CMS library
+brew "libksba"
+# GNU Pretty Good Privacy (PGP) package
+brew "gnupg"
 # Google Search and News from the command-line
 brew "googler"
 # Fulltext search engine and column store
@@ -97,6 +109,8 @@ brew "imagemagick@6"
 brew "ios-webkit-debug-proxy"
 # CLI wrapper for basic network utilities on macOS - ip command
 brew "iproute2mac"
+# Interactive computing in Python
+brew "ipython"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
 # Swiss-army knife of markup format conversion
@@ -111,18 +125,16 @@ brew "kubernetes-cli", link: false
 brew "libarchive"
 # Conversion library
 brew "libiconv"
-# X.509 and CMS library
-brew "libksba"
+# C library SSHv1/SSHv2 client and server protocols
+brew "libssh"
 # GNOME XML library
 brew "libxml2"
 # C XSLT library for GNOME
 brew "libxslt"
-# YAML Parser
-brew "libyaml"
 # Securely transfers data between computers
 brew "magic-wormhole"
 # Drop-in replacement for MySQL
-brew "mariadb", link: false
+brew "mariadb"
 # High performance, distributed memory object caching system
 brew "memcached", restart_service: true
 # Run a Kubernetes cluster locally
@@ -151,6 +163,8 @@ brew "poppler"
 brew "postgresql", restart_service: true
 # Software environment for statistical computing
 brew "r"
+# Install various Ruby versions and implementations
+brew "ruby-build"
 # Ruby version manager
 brew "rbenv"
 # Persistent key-value database, with built-in net interface
@@ -215,6 +229,7 @@ cask "docker"
 cask "joplin"
 # Open-source firewall to block unknown outgoing connections
 cask "lulu"
+# Open source, GUI document processor based on the LaTeX typesetting system
 cask "lyx"
 # Full TeX Live distribution with GUI applications
 cask "mactex"
